@@ -1,0 +1,82 @@
+body {
+  font-family: 'Baloo 2', cursive;
+  margin: 0;
+  background: #1e1e1e;
+  color: white;
+}
+
+#headerLogo {
+  height: 400px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+header {
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive; /* Title font */
+}
+
+input {
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 100px;
+  border: none;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.game-card {
+  display: block;
+  background: #2b2b2b;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card img {
+  width: 100%;
+  display: block;
+}
+
+.game-card h2 {
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+#genreFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+#genreFilters button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 100px; /* pill */
+  background: #2b2b2b;
+  color: white;
+  font-family: 'Luckiest Guy', cursive;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#genreFilters button:hover {
+  background: #3a3a3a;
+}
+
