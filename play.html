@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25039LKZ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L25039LKZ6');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamez 🎱+</title>
+
+  <link rel="icon" href="images/branding/ico.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="games.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+
+  <header>
+    <img src="images/branding/banner.png" alt="Gamez 🎱+ Logo" id="headerLogo">
+    <input type="text" id="search" placeholder="🔍 Search games...">
+
+    <!-- 🔹 Genre Filter Buttons -->
+    <div id="genreFilters">
+      <button onclick="setGenre('all')">All</button>
+      <button onclick="setGenre('arcade')">Arcade</button>
+      <button onclick="setGenre('puzzle')">Puzzle</button>
+      <button onclick="setGenre('adventure')">Adventure</button>
+      <button onclick="setGenre('simulation')">Simulation</button>
+      <button onclick="setGenre('platformer')">Platformer</button>
+      <button onclick="setGenre('mobile')">Mobile</button>
+      <button onclick="setGenre('minecraft')">Minecraft</button>
+    </div>
+  </header>
+
+  <main id="gameGrid" class="grid-container">
+    <!-- Games will be loaded here -->
+  </main>
+
+</body>
+</html>
