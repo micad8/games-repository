@@ -1,89 +1,49 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eight Classes</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2216%22>📚</text></svg>">
+  <title>8 Classes | 404</title>
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'&gt;&lt;text y='14' font-size='16'&gt;❓&lt;/text&gt;&lt;/svg&gt;">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #e0f0ff;
+      background: #f0f8ff;
       color: #03396c;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      gap: 20px;
-      text-align: center;
+      max-width: 800px;
+      margin: 40px auto;
       padding: 20px;
+      line-height: 1.6;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 5px;
-    }
-
-    p.slogan {
-      font-size: 1.2rem;
-      margin-top: 0;
-      margin-bottom: 20px;
-      color: #055a9c;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 220px);
-      gap: 20px;
-    }
-
-    button {
-      padding: 18px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 25px;
-      background-color: #0370c7;
-      color: white;
+    h1 { color: #0370c7; margin-bottom: 20px; }
+    p { margin-bottom: 15px; }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 8px 15px;
+      font-size: 14px;
+      background-color: white;
+      color: #0370c7;
+      border: 2px solid #0370c7;
+      border-radius: 15px;
       cursor: pointer;
+      text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    button:hover {
-      background-color: #055aa3;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0,0,0,0.2);
-    }
-
-    p.description {
-      max-width: 600px;
-      color: #034a7f;
-      font-size: 1rem;
-      line-height: 1.5;
+    .back-button:hover {
+      background-color: #e6f0ff;
+      color: #03396c;
+      transform: translateY(-1px);
     }
   </style>
 </head>
 <body>
 
-  <h1>Eight Classes</h1>
-  <p class="slogan">Eight tools</p>
-  <p class="description">
-    Welcome to Eight Classes! This hub collects eight essential school tools to make learning easier and more interactive. 
-    From calculators to coding, typing, reading, and online whiteboards, each button opens a useful resource to help you succeed in your studies.
-  </p>
+  <a href="index.html" class="back-button">← Back to Home</a>
 
-  <div class="buttons">
-    <button onclick="window.open('https://www.desmos.com/calculator', '_blank')">Graphing Calculator</button>
-    <button onclick="window.open('https://www.khanacademy.org', '_blank')">Khan Academy</button>
-    <button onclick="window.open('https://www.wolframalpha.com', '_blank')">Wolfram Alpha</button>
-    <button onclick="window.open('https://www.typingclub.com', '_blank')">Typing Practice</button>
-    <button onclick="window.open('https://www.chemguide.co.uk', '_blank')">Chemistry Guide</button>
-    <button onclick="window.open('https://canvas.apps.chrome/', '_blank')">Online Whiteboard</button>
-    <button onclick="window.open('https://www.readingbear.org', '_blank')">Reading Resources</button>
-    <button onclick="window.open('https://www.codecademy.com', '_blank')">Coding Practice</button>
-  </div>
+  <h1>404 Error</h1>
+  <p> Uh Oh, You typed in the wrong url and got an incorrect page error. 👎☹️</p>
 
 </body>
 </html>
