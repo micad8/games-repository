@@ -1,121 +1,379 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eight Classes is an educational hub with calculators, coding, typing, reading, and online whiteboard tools for students.">
-  <meta name="keywords" content="education, school, learning, calculators, coding, typing, reading, online whiteboard">
-  <title>Eight Classes</title>
-  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22&gt;&lt;text y=%2214%22 font-size=%2216%22&gt;📚&lt;/text&gt;&lt;/svg&gt;">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #e0f0ff;
-      color: #03396c;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      gap: 20px;
-      text-align: center;
-      padding: 20px;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eight Classes is a customizable educational hub with calculators, coding, typing, reading, and online whiteboard tools for students.">
+<meta name="keywords" content="education, school, learning, online tools, calculators, graphing calculator, coding, programming, typing practice, reading resources, online whiteboard, study hub, student resources, study tools, math tools, science tools, interactive learning, educational websites, homework help, study aids, classroom tools, e-learning, distance learning, student productivity, study shortcuts, learning resources, personalized learning, study tips, educational platforms, digital learning, virtual classroom, study planner, math practice, science experiments, chemistry guide, physics problems, biology resources, reading comprehension, literacy tools, writing practice, essay help, programming tutorials, coding exercises, software tools, online courses, video lessons, educational videos, learning apps, skill building, time management, test prep, exam practice, flashcards, practice quizzes, learning games, brain training, skill development, educational technology, student engagement, study motivation, learning strategies, educational support, online tutorials, learning activities, academic resources, problem solving, critical thinking, creative learning, project based learning, interactive tools, study efficiency, productivity tools, academic skills, educational resources, school help, knowledge building, STEM resources, STEAM learning, coding games, typing games, math games, science games, reading games, writing games, skill practice, virtual learning, e-learning platforms, digital study aids, online study help, academic improvement, educational assistance, homework tools, educational content, study planner app, learning hub, student support tools">
+<title>Eight Classes</title>
+<link rel="icon" href="images/8classes.png">
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e0f0ff;
+  color: #03396c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  gap: 20px;
+  text-align: center;
+  padding: 40px 20px 100px 20px;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 5px;
-    }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
 
-    p.slogan {
-      font-size: 1.2rem;
-      margin-top: 0;
-      margin-bottom: 20px;
-      color: #055a9c;
-    }
+p.slogan {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #055a9c;
+}
 
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 220px);
-      gap: 20px;
-    }
+/* INPUT GROUP AND TEXTAREA */
+.input-group {
+  width: 460px;       /* 2 buttons (220px each) + 20px gap */
+  margin: 0 auto;     /* center like buttons */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
-    button {
-      padding: 18px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 25px;
-      background-color: #0370c7;
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+textarea.description {
+  width: 100%;         
+  margin: 0;           
+  font-size: 1rem;
+  text-align: center;  
+  resize: vertical;
+  border-radius: 15px;
+  border: 1.5px solid #ccc;
+  padding: 12px 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
 
-    button:hover {
-      background-color: #055aa3;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0,0,0,0.2);
-    }
+textarea.description:focus {
+  border-color: #0370c7;
+  box-shadow: 0 4px 8px rgba(3,112,199,0.2);
+  background-color: #f0f8ff;
+}
 
-    p.description {
-      max-width: 600px;
-      color: #034a7f;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+/* BUTTON GRID */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  gap: 20px;
+  margin-top: 20px;
+  transition: opacity 0.5s ease;
+}
 
-    /* New button style */
-    .extra-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 30px;
-    }
+button.tool-button {
+  padding: 18px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background-color: #0370c7;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 220px;
+}
 
-    .extra-buttons button {
-      padding: 10px 18px;
-      font-size: 14px;
-      background-color: white;
-      color: #0370c7;
-      border: 2px solid #0370c7;
-      border-radius: 20px;
-      box-shadow: none;
-    }
+button.tool-button:hover {
+  background-color: #055aa3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
 
-    .extra-buttons button:hover {
-      background-color: #e6f0ff;
-      color: #03396c;
-      transform: translateY(-1px);
-    }
-  </style>
+/* EXTRA BUTTONS */
+.extra-buttons {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+}
+
+.extra-buttons button {
+  padding: 10px 18px;
+  font-size: 14px;
+  background-color: white;
+  color: #0370c7;
+  border: 2px solid #0370c7;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.extra-buttons button:hover {
+  background-color: #e6f0ff;
+  color: #03396c;
+  transform: translateY(-1px);
+}
+
+/* EDITOR TOGGLE & RESET */
+.editor-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 101;
+  transition: transform 0.3s ease;
+}
+
+.editor-toggle.spin {
+  transform: rotate(20deg);
+}
+
+.reset-btn {
+  display: none;
+  position: fixed;
+  top: 26.24px; 
+  right: 90px; 
+  z-index: 101;
+  font-size: 16px;
+  padding: 6px 12px;   /* reduced vertical padding */
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* EDIT FIELDS */
+.edit-fields {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.edit-fields .input-group input {
+  width: 220px;        /* same as button width */
+  padding: 8px 15px;   /* less vertical padding */
+  font-size: 16px;
+  border-radius: 15px;
+  border: 1.5px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+.edit-fields .input-group input:focus {
+  border-color: #0370c7;
+  box-shadow: 0 4px 8px rgba(3,112,199,0.2);
+  background-color: #f0f8ff;
+}
+
+.edit-fields .input-group input::placeholder {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* SAVE BUTTON */
+.save-btn {
+  display: none;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: #03396c;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #055aa3;
+}
+
+/* FADE OVERLAY */
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 150;
+}
+</style>
 </head>
 <body>
 
-  <h1>Eight Classes</h1>
-  <p class="slogan">Eight Tools</p>
-  <p class="description">
-    Welcome to Eight Classes! This hub collects eight essential school tools to make learning easier and more interactive. 
-    From calculators to coding, typing, reading, and online whiteboards, each button opens a useful resource to help you succeed in your studies.
-  </p>
+<div class="editor-toggle" title="Toggle Editor Mode">⚙️</div>
+<button class="reset-btn" id="reset-btn">Reset</button>
+<div class="fade-overlay" id="fade-overlay"></div>
 
-  <div class="buttons">
-    <button onclick="window.open('https://www.desmos.com/calculator', '_blank')">Graphing Calculator</button>
-    <button onclick="window.open('https://www.khanacademy.org', '_blank')">Khan Academy</button>
-    <button onclick="window.open('https://www.wolframalpha.com', '_blank')">Wolfram Alpha</button>
-    <button onclick="window.open('https://www.typingclub.com', '_blank')">Typing Practice</button>
-    <button onclick="window.open('https://www.chemguide.co.uk', '_blank')">Chemistry Guide</button>
-    <button onclick="window.open('https://canvas.apps.chrome/', '_blank')">Online Whiteboard</button>
-    <button onclick="window.open('https://www.readingbear.org', '_blank')">Reading Resources</button>
-    <button onclick="window.open('https://www.codecademy.com', '_blank')">Coding Practice</button>
-  </div>
+<h1>Eight Classes</h1>
+<p class="slogan">Eight Tools</p>
 
-  <!-- New Educational Buttons -->
-  <div class="extra-buttons">
-    <button onclick="window.location.href='what.html'">What is this?</button>
-    <button onclick="window.location.href='purpose.html'">The Purpose</button>
-    <button onclick="window.location.href='howto.html'">How to Use</button>
-    <button onclick="window.location.href='benefits.html'">Learning Benefits</button>
-  </div>
+<div class="input-group">
+  <textarea class="description" id="description" rows="4" readonly>
+Welcome to Eight Classes! This hub collects eight essential school tools to make learning easier and more interactive. 
+From calculators to coding, typing, reading, and online whiteboards, each button opens a useful resource to help you succeed in your studies.
+  </textarea>
+</div>
+
+<div class="buttons" id="buttons-container"></div>
+
+<button class="save-btn" id="save-btn">Save Changes</button>
+
+<div class="extra-buttons">
+  <button onclick="window.location.href='what.html'">What is this?</button>
+  <button onclick="window.location.href='purpose.html'">The Purpose</button>
+  <button onclick="window.location.href='howto.html'">How to Use</button>
+  <button onclick="window.location.href='benefits.html'">Benefits</button>
+</div>
+
+<script>
+const defaultTools = [
+  {title: 'Graphing Calculator', link: 'https://www.desmos.com/calculator'},
+  {title: 'Khan Academy', link: 'https://www.khanacademy.org'},
+  {title: 'Wolfram Alpha', link: 'https://www.wolframalpha.com'},
+  {title: 'Typing Practice', link: 'https://www.typingclub.com'},
+  {title: 'Chemistry Guide', link: 'https://www.chemguide.co.uk'},
+  {title: 'Online Whiteboard', link: 'https://canvas.apps.chrome/'},
+  {title: 'Reading Resources', link: 'https://www.readingbear.org'},
+  {title: 'Coding Practice', link: 'https://www.codecademy.com'}
+];
+
+let tools = JSON.parse(localStorage.getItem('eightClassesTools')) || defaultTools;
+const buttonsContainer = document.getElementById('buttons-container');
+const saveBtn = document.getElementById('save-btn');
+const editorToggle = document.querySelector('.editor-toggle');
+const fadeOverlay = document.getElementById('fade-overlay');
+const description = document.getElementById('description');
+const resetBtn = document.getElementById('reset-btn');
+
+let editorMode = false;
+let unsavedChanges = false;
+
+function renderButtons() {
+  buttonsContainer.innerHTML = '';
+  tools.forEach(tool => {
+    const div = document.createElement('div');
+
+    const btn = document.createElement('button');
+    btn.className = 'tool-button';
+    btn.textContent = tool.title;
+    btn.onclick = () => { if (!editorMode && tool.title && tool.link) window.open(tool.link, '_blank'); };
+    div.appendChild(btn);
+
+    const editDiv = document.createElement('div');
+    editDiv.className = 'edit-fields';
+    editDiv.innerHTML = `
+      <div class="input-group">
+        <input type="text" value="${tool.title}" placeholder="Button Title" maxlength="25">
+        <input type="text" value="${tool.link}" placeholder="Button Link" maxlength="100">
+      </div>
+    `;
+    editDiv.querySelectorAll('input').forEach(input => input.addEventListener('input', () => unsavedChanges = true));
+    div.appendChild(editDiv);
+
+    buttonsContainer.appendChild(div);
+
+    if (!tool.title || !tool.link) btn.style.display = 'none';
+  });
+
+  document.querySelectorAll('.tool-button').forEach(btn => btn.style.display = editorMode ? 'none' : btn.style.display);
+  document.querySelectorAll('.edit-fields').forEach(e => e.style.display = editorMode ? 'flex' : 'none');
+  saveBtn.style.display = editorMode ? 'inline-block' : 'none';
+  description.readOnly = !editorMode;
+  resetBtn.style.display = editorMode ? 'inline-block' : 'none';
+}
+
+editorToggle.addEventListener('click', () => {
+  editorToggle.classList.add('spin');
+  setTimeout(() => editorToggle.classList.remove('spin'), 300);
+
+  if (editorMode && unsavedChanges) {
+    if (!confirm("You have unsaved changes. Leave editor mode without saving?")) return;
+  }
+  editorMode = !editorMode;
+  unsavedChanges = false;
+  renderButtons();
+});
+
+resetBtn.addEventListener('click', () => {
+  if(confirm("Reset all buttons and description to default?")) {
+
+    // Reset data
+    tools = JSON.parse(JSON.stringify(defaultTools));
+    description.value = "Welcome to Eight Classes! This hub collects eight essential school tools to make learning easier and more interactive. \nFrom calculators to coding, typing, reading, and online whiteboards, each button opens a useful resource to help you succeed in your studies.";
+    description.style.height = '';
+    localStorage.removeItem('eightClassesTools');
+    localStorage.removeItem('eightClassesDescription');
+    localStorage.removeItem('eightClassesDescriptionHeight');
+
+    // Trigger subtle red-white flash
+    fadeOverlay.style.background = 'rgba(255,100,100,0.25)';  // pale washed-out red
+    fadeOverlay.style.opacity = 1;
+
+    setTimeout(() => {
+      editorMode = false;      // exit editor mode
+      unsavedChanges = false;
+      renderButtons();
+      fadeOverlay.style.opacity = 0;  // hide flash
+      fadeOverlay.style.background = '#ffffff'; // restore default overlay color
+    }, 500);
+  }
+});
 
 
+saveBtn.addEventListener('click', () => {
+  const newTools = [];
+  document.querySelectorAll('.edit-fields .input-group').forEach(group => {
+    const inputs = group.querySelectorAll('input');
+    newTools.push({title: inputs[0].value.trim(), link: inputs[1].value.trim()});
+  });
+  tools = newTools;
+  localStorage.setItem('eightClassesTools', JSON.stringify(tools));
+  localStorage.setItem('eightClassesDescription', description.value.trim());
+  localStorage.setItem('eightClassesDescriptionHeight', description.style.height);
+  unsavedChanges = false;
 
-</body></html>
+  fadeOverlay.style.opacity = 1;
+  setTimeout(() => {
+    editorMode = false;
+    renderButtons();
+    fadeOverlay.style.opacity = 0;
+  }, 500);
+});4
+
+window.addEventListener('beforeunload', (e) => {
+  if(editorMode && unsavedChanges){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+const savedDesc = localStorage.getItem('eightClassesDescription');
+if(savedDesc) description.value = savedDesc;
+const savedHeight = localStorage.getItem('eightClassesDescriptionHeight');
+if(savedHeight) description.style.height = savedHeight;
+
+renderButtons();
+</script>
+
+</body>
+</html>
